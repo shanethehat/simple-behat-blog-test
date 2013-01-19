@@ -11,6 +11,11 @@ Scenario: Test site root is found
 Scenario: Test about page exists
 
     Given I am on "/"
-    And I follow "ABOUT ME"
+    And I follow "About Me"
     Then I should be on "/about-me/"
     And I should see "About Me"
+
+Scenario: Deliberate failue
+
+    Given i am on "/"
+    Then I should see "Where I air my dirty laundry"
