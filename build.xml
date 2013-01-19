@@ -18,7 +18,7 @@
     <!-- Run the test suite -->
     <target name="test" description="Execute the behat tests">
         <echo msg="Run behat tests" />
-        <exec command="vendor/bin/behat" />
+        <exec command="vendor/bin/behat --profile jenkins" />
     </target>
 
 </project>
