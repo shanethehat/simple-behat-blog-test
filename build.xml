@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="Blog tester" default="runner" basedir=".">
+    
+    <!-- Run the individual steps required -->
+    <target name="runner" description="Overall step executor" depends="prepare, test">
+        <echo msg="Running ..." />
+    </target>
+
+    <!-- Prepare the environment with composer -->
+    <target name="prepare" description="Use composer to install dependancies">
+        <echo msg="update composer" />
+        <exec command="php composer.phar self-update" />
+        <echo msg="install dependancies" />
+        <exec command="php composer.phar update" />
+    </target>
+
+    <!-- Run the test suite -->
+    <target name="test" description="Execute the behat tests">
+        <echo msg="Run behat tests" />
+        <exec command="vendor/bin/behat" />
+    </target>
+
+</project>
