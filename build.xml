@@ -10,15 +10,15 @@
     <!-- Prepare the environment with composer -->
     <target name="prepare" description="Use composer to install dependancies">
         <echo msg="update composer" />
-        <exec command="php composer.phar self-update" />
+        <exec command="php composer.phar self-update" passthru="true" />
         <echo msg="install dependancies" />
-        <exec command="php composer.phar update" />
+        <exec command="php composer.phar update" passthru="true" />
     </target>
 
     <!-- Run the test suite -->
     <target name="test" description="Execute the behat tests">
         <echo msg="Run behat tests" />
-        <exec command="vendor/bin/behat --profile jenkins" />
+        <exec command="vendor/bin/behat --profile jenkins" passthru="true" />
     </target>
 
 </project>
